@@ -1,0 +1,23 @@
+
+#contentWrapper {
+  max-width: 800px;
+  padding-left: 30px;
+  padding-right: 30px;
+}
+
+#contentWrapper div {
+  margin: 15px auto;
+  color: #333333;
+}
+
+#contentWrapper div.level1 {
+  margin-left: 10px;
+}
+
+#contentWrapper div.level2 {
+  margin-left: 30px;
+}
+
+#contentWrapper div.level3 {
+  margin-left: 50px;
+}
