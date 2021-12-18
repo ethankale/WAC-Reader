@@ -7,7 +7,7 @@
   "description": "Reformats WAC and RCW on leg.wa.gov for easier reading.",
 
   "icons": {
-    "48": "icons/noun-book.svg"
+    "48": "icons/noun-book.svg",
     "96": "icons/noun-book.svg"
   },
 
