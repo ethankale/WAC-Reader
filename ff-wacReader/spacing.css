@@ -1,31 +1,31 @@
 
-#contentWrapper {
+#contentWrapper, #ContentPlaceHolder1_pnlExpanded {
   max-width: 800px;
   padding-left: 30px;
   padding-right: 30px;
 }
 
-#contentWrapper div {
+#contentWrapper div, #ContentPlaceHolder1_pnlExpanded div {
   margin: 15px auto;
   color: #333333;
 }
 
-#contentWrapper div.level1 {
+#contentWrapper div.level1, #ContentPlaceHolder1_pnlExpanded div.level1 {
   margin-left: 10px;
 }
 
-#contentWrapper div.level2 {
+#contentWrapper div.level2, #ContentPlaceHolder1_pnlExpanded div.level2 {
   margin-left: 30px;
 }
 
-#contentWrapper div.level3 {
+#contentWrapper div.level3, #ContentPlaceHolder1_pnlExpanded div.level3 {
   margin-left: 50px;
 }
 
-#contentWrapper div.level4 {
+#contentWrapper div.level4, #ContentPlaceHolder1_pnlExpanded div.level4 {
   margin-left: 70px;
 }
 
-#contentWrapper div.level5 {
+#contentWrapper div.level5, #ContentPlaceHolder1_pnlExpanded div.level5 {
   margin-left: 90px;
 }

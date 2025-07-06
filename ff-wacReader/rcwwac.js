@@ -16,7 +16,26 @@ if (URLvar == null) {
   var elements = document.getElementById("contentWrapper").children[2].children;
   reformat(elements);
 } else {
-  console.log("full variable - displaying a complete chapter")
+  var sections = document.getElementById("ContentPlaceHolder1_dlSectionContent")
+  .children;
+  
+  console.log(sections);
+
+  for (var i = 0; i < sections.length; i++) {
+    var section = sections[i];
+    // console.log(section.tagName);
+    if (section.tagName == 'SPAN') {
+      
+      console.log("Selected section");
+      console.log(section);
+      console.log("---")
+
+      var elements = section.children[5].children;
+      reformat(elements);
+    }
+  }
+
+
 };
 
 
