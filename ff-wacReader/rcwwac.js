@@ -7,31 +7,41 @@ WAC/RCW is displayed in different ways depending on the browser configuration.
 
 var parameters = new URLSearchParams(window.location.search);
 var URLvar = parameters.get('full')
-console.log(URLvar == null)
 
 // If there's a "full" value in the URL, it means displaying many sections of 
 //   RCW or WAC at the same time.
 
 if (URLvar == null) {
-  var elements = document.getElementById("contentWrapper").children[2].children;
-  reformat(elements);
+
+  var elements = document.getElementById("contentWrapper").children;
+  for (var i = 0; i < elements.length; i++) {
+    if (typeof elements[i] !== 'undefined') {
+      reformat(elements[i].children);
+    }
+  }
+  
 } else {
   var sections = document.getElementById("ContentPlaceHolder1_dlSectionContent")
   .children;
   
-  console.log(sections);
-
+  /* 
+  Start by looping through each "section" of the page.
+  Sections are usually spans delineated by <br> and <hr> tags.
+  We want to apply the reformat() function to divs in sections that contain
+    content - headings, or other divs.
+  */
   for (var i = 0; i < sections.length; i++) {
     var section = sections[i];
-    // console.log(section.tagName);
-    if (section.tagName == 'SPAN') {
-      
-      console.log("Selected section");
-      console.log(section);
-      console.log("---")
 
-      var elements = section.children[5].children;
-      reformat(elements);
+    if (section.tagName == 'SPAN') {
+      for (var j = 0; j < section.children.length; j++) {
+        
+        var elements = section.children[j].children;
+
+        if (typeof elements !== 'undefined') {
+          reformat(elements);
+        }
+      }
     }
   }
 
@@ -68,7 +78,6 @@ function reformat(elements) {
 
   for (var i = 0, element; element = elements[i++];) {
     element.style.removeProperty("text-indent");
-    
     var currentClass = lastClass;
     
     if (level1regex.test(element.innerHTML)) {
@@ -92,10 +101,11 @@ function reformat(elements) {
       currentClass = "level4";
     };
     
-    console.log(lastContent);
-    console.log(element.innerHTML);
-    console.log(currentClass);
-    console.log('----');
+    // console.log(lastContent);
+    // console.log(element.innerHTML);
+    // console.log(element);
+    // console.log(currentClass);
+    // console.log('----');
     
     element.className = currentClass;
     lastClass   = currentClass;

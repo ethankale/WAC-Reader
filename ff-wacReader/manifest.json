@@ -1,6 +1,6 @@
 {
 
-  "manifest_version": 2,
+  "manifest_version": 3,
   "name": "Better RCW/WAC",
   "version": "0.3",
 
@@ -13,9 +13,14 @@
 
   "content_scripts": [
     {
-      "matches": ["*://*.leg.wa.gov/*"],
-      "js": ["rcwwac.js"],
-      "css": ["spacing.css"]
+      "matches":  ["*://*.app.leg.wa.gov/*"],
+      "js":       ["rcwwac.js"],
+      "css":      ["spacing.css"]
+    },
+    {
+      "matches":  ["*://*.lawfilesext.leg.wa.gov/*"],
+      "js":       ["rcwwac_lawfiles.js"],
+      "css":      ["rcwwac_lawfiles.css"]
     }
   ]
 
