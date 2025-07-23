@@ -3,3 +3,32 @@ body {
   padding-left: 30px;
   padding-right: 30px;
 }
+
+div {
+  margin: 15px auto;
+  color: #333333;
+}
+
+div.level1 {
+  margin-left: 10px;
+}
+
+div.level2 {
+  margin-left: 30px;
+}
+
+div.level3 {
+  margin-left: 50px;
+}
+
+div.level4 {
+  margin-left: 70px;
+}
+
+div.level5 {
+  margin-left: 90px;
+}
+
+span {
+  background-color: rgb(117 190 218 / 50%);
+}
