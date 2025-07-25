@@ -22,6 +22,9 @@ function reformat(elements) {
   // Starts with (i) or similar (lower case roman numeral)
   var level5regex = new RegExp('^[(](XC|XL|L?X{0,3})(IX|IV|V?I{0,3})[)]');
 
+  // Starts with a specific comment
+  var commentregex = new RegExp('^<!-- field: BeginningSection -->');
+
   var lowerhregex = new RegExp('\\(h\\)');
   var upperHregex = new RegExp('\\(H\\)');
 
@@ -33,7 +36,7 @@ function reformat(elements) {
     
     var currentClass = lastClass;
     
-    if (level1regex.test(element.innerHTML)) {
+    if (level1regex.test(element.innerHTML) || commentregex.test(element.innerHTML)) {
       currentClass = "level1";
     
     // Element 3 comes first, because otherwise (i) would be classified as
